@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import products from "../products.json";
 import { useCart } from "../hooks/use-cart";
+import Link from "next/link";
 
 export default function Home() {
   const { subtotal, totalItems, addToCart, checkout } = useCart();
@@ -46,24 +47,27 @@ export default function Home() {
             const { id, title, image, description, price } = product;
             return (
               <li className={styles.card} key={id}>
-                <a href="#">
-                  <img src={image} alt="Sticker" />
-                  <h3>{title}</h3>
-                  <p>$ {price}</p>
-                  <p>{description}</p>
-                </a>
-                <p>
-                  <button
-                    className={styles.button}
-                    onClick={() => {
-                      addToCart({
-                        id,
-                      });
-                    }}
-                  >
-                    Add To Cart
-                  </button>
-                </p>
+                <Link href={`/products/${id}`}>
+                  <a>
+                    <img src={image} alt="Sticker" />
+                    <h3>{title}</h3>
+                    <p>$ {price}</p>
+                    <p>{description}</p>
+
+                    <p>
+                      <button
+                        className={styles.button}
+                        onClick={() => {
+                          addToCart({
+                            id,
+                          });
+                        }}
+                      >
+                        Add To Cart
+                      </button>
+                    </p>
+                  </a>
+                </Link>
               </li>
             );
           })}
