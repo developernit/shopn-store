@@ -1,0 +1,23 @@
+[
+  {
+    "id": "prod_Lnv2mdJlVySStf",
+    "title": "Shopn Tshirt",
+    "description": "Grab these limited edition T-Shirts.",
+    "image": "/images/tshirt.png",
+    "price": 20.0
+  },
+  {
+    "id": "prod_Lnv4Oa7f952LNk",
+    "title": "Shopn Stickers",
+    "description": "Grab these limited edition Stickers.",
+    "image": "/images/sticker.png",
+    "price": 10.0
+  },
+  {
+    "id": "prod_Lnv4CAUx9fknyb",
+    "title": "Shopn Combo Pack",
+    "description": "Grab these limited edition Combo Pack.",
+    "image": "/images/combo.png",
+    "price": 25.0
+  }
+]

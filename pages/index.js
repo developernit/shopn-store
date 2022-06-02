@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import products from "../products.json";
 
 export default function Home() {
   return (
@@ -19,31 +20,19 @@ export default function Home() {
         </p>
 
         <ul className={styles.grid}>
-          <li className={styles.card}>
-            <a href="https://nextjs.org/docs">
-              <img src="/images/sticker.png" alt="Sticker" />
-              <h2>Stickers</h2>
-              <p>Find the best stickers in the web with Shopn!</p>
-            </a>
-          </li>
-
-          <li className={styles.card}>
-            <a href="https://github.com/vercel/next.js/tree/canary/examples">
-              <img src="/images/tshirt.png" alt="TShirt" />
-              <h2>TShirt</h2>
-              <p>Grab these limited edition T-Shirts.</p>
-            </a>
-          </li>
-
-          <li className={styles.card}>
-            <a href="https://nextjs.org/learn">
-              <img src="/images/combo.png" alt="Combo" />
-              <h2>Combo</h2>
-              <p>
-                Show your love for Shopn with a tshirt and sticker combo pack!
-              </p>
-            </a>
-          </li>
+          {products.map((product) => {
+            const { id, title, image, description, price } = product;
+            return (
+              <li className={styles.card} key={id}>
+                <a href="#">
+                  <img src={image} alt="Sticker" />
+                  <h3>{title}</h3>
+                  <p>$ {price}</p>
+                  <p>{description}</p>
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </main>
 
