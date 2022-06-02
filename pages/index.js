@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import products from "../products.json";
+import { initiateCheckout } from "../lib/payments";
 
 export default function Home() {
   return (
@@ -30,6 +31,23 @@ export default function Home() {
                   <p>$ {price}</p>
                   <p>{description}</p>
                 </a>
+                <p>
+                  <button
+                    className={styles.button}
+                    onClick={() => {
+                      initiateCheckout({
+                        lineItems: [
+                          {
+                            price: id,
+                            quantity: 1,
+                          },
+                        ],
+                      });
+                    }}
+                  >
+                    Buy Now
+                  </button>
+                </p>
               </li>
             );
           })}
