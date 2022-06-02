@@ -2,7 +2,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import products from "../products.json";
-import useCart from "../hooks/use-cart";
+import { useCart } from "../hooks/use-cart";
 
 export default function Home() {
   const { subtotal, totalItems, addToCart, checkout } = useCart();
