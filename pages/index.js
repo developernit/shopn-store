@@ -3,15 +3,22 @@ import styles from "../styles/Home.module.css";
 import products from "../products.json";
 import { useCart } from "../hooks/use-cart";
 import Link from "next/link";
+import ogImage from "../public/logo.png";
 
 export default function Home() {
   const { subtotal, totalItems, addToCart, checkout } = useCart();
-
   return (
     <div className={styles.container}>
       <Head>
         <title>Shopn</title>
-        <meta name="description" content="Shopn" />
+        <meta property="description" content="Shopn" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Shopn" />
+        <meta
+          property="og:description"
+          content="A simple ecom website, Shopn"
+        />
+        <meta property="og:image" content={ogImage} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

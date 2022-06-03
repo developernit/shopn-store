@@ -41,6 +41,14 @@ export default function Cart() {
     <div className={styles.container}>
       <Head>
         <title>Shopping Cart - Shopn</title>
+        <meta property="description" content="Shopn" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Shopn" />
+        <meta
+          property="og:description"
+          content="A simple ecom website, Shopn"
+        />
+        <meta property="og:image" content={ogImage} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
