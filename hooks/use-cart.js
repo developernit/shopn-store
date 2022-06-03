@@ -52,7 +52,6 @@ export function useCartState() {
   function addToCart({ id } = {}) {
     updateCart((prev) => {
       let cart = { ...prev };
-
       if (cart.products[id]) {
         cart.products[id].quantity = cart.products[id].quantity + 1;
       } else {
@@ -60,6 +59,17 @@ export function useCartState() {
           id,
           quantity: 1,
         };
+      }
+      return cart;
+    });
+  }
+
+  function updateItem({ id, quantity }) {
+    updateCart((prev) => {
+      let cart = { ...prev };
+
+      if (cart.products[id]) {
+        cart.products[id].quantity = quantity;
       }
       return cart;
     });
@@ -79,6 +89,7 @@ export function useCartState() {
   return {
     cart,
     updateCart,
+    updateItem,
     subtotal,
     totalItems,
     addToCart,
