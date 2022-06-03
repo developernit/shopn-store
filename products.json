@@ -1,36 +1,36 @@
 [
   {
     "id": "price_1L6OLZQqYS0o74zLdOD8pn73",
-    "title": "WOW TShirt",
-    "description": "WOW! TShirt from SHOPN.",
+    "title": "WOW",
+    "description": "Bring jello, the WOW Cat to your wardrobe with this high quality tshirt.",
     "image": "/images/wow-tshirt.png",
     "price": 30.0
   },
   {
     "id": "price_1L6OLFQqYS0o74zLXNMyRwB7",
-    "title": "LOVE TShirt",
-    "description": "Grab these limited edition LOVE TShirt.",
+    "title": "LOVE",
+    "description": "Bring daisy, the LOVE Cat to your wardrobe with this high quality tshirt.",
     "image": "/images/love-tshirt.png",
     "price": 30.0
   },
   {
     "id": "price_1L6OKmQqYS0o74zLhgaD1w6L",
-    "title": "ANGRY TShirt",
-    "description": "ANGRY TShirt from SHOPN.",
+    "title": "ANGRY",
+    "description": "Bring misty, the ANGRY Cat to your wardrobe with this high quality tshirt.",
     "image": "/images/angry-tshirt.png",
     "price": 30.0
   },
   {
     "id": "price_1L6OKNQqYS0o74zLbpkaCsfj",
-    "title": "HI TShirt",
-    "description": "HI TShirt from SHOPN.",
+    "title": "HI",
+    "description": "Bring shopn, the SHOPN Official Cat to your wardrobe with this high quality tshirt.",
     "image": "/images/hi-tshirt.png",
     "price": 30.0
   },
   {
     "id": "price_1L6OJmQqYS0o74zLKHwxL54k",
     "title": "SHOPNs Stickers",
-    "description": "Limited edition SHOPN Stickers.",
+    "description": "Limited edition SHOPN Cat Stickers.",
     "image": "/images/sticker.png",
     "price": 20.0
   }

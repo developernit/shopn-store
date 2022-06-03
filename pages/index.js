@@ -1,4 +1,3 @@
-import { FaShoppingCart } from "react-icons/fa";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import products from "../products.json";
@@ -17,8 +16,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to Shopn!</h1>
-
+        <h1 className={styles.title}>
+          Welcome to <a>Shopn!</a>
+        </h1>
+        <img src="/logo.png" />
         <p className={styles.description}>
           A simple e-commerce website built with <em>Next.js</em> and{" "}
           <em>Stripe</em>.
@@ -32,13 +33,12 @@ export default function Home() {
                 <Link href={`/products/${id}`}>
                   <a>
                     <img src={image} alt="Sticker" />
-                    <h3>{title}</h3>
-                    <p>$ {price}</p>
+                    <h3 className={styles.h3title}>{title}</h3>
+                    <h2 className={styles.price}>$ {price}</h2>
                     <p>{description}</p>
                   </a>
                 </Link>
-
-                <p>
+                <p className={styles.pbutton}>
                   <button
                     className={styles.button}
                     onClick={() => {
