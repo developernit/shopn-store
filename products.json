@@ -1,23 +1,37 @@
 [
   {
-    "id": "price_1L6JCgQqYS0o74zLbCHHOWZ7",
-    "title": "Shopn Tshirt",
-    "description": "Grab these limited edition T-Shirts.",
-    "image": "/images/tshirt.png",
-    "price": 20.0
+    "id": "price_1L6OLZQqYS0o74zLdOD8pn73",
+    "title": "WOW TShirt",
+    "description": "WOW! TShirt from SHOPN.",
+    "image": "/images/wow-tshirt.png",
+    "price": 30.0
   },
   {
-    "id": "price_1L6JE2QqYS0o74zL7Ll6vNRK",
-    "title": "Shopn Stickers",
-    "description": "Grab these limited edition Stickers.",
+    "id": "price_1L6OLFQqYS0o74zLXNMyRwB7",
+    "title": "LOVE TShirt",
+    "description": "Grab these limited edition LOVE TShirt.",
+    "image": "/images/love-tshirt.png",
+    "price": 30.0
+  },
+  {
+    "id": "price_1L6OKmQqYS0o74zLhgaD1w6L",
+    "title": "ANGRY TShirt",
+    "description": "ANGRY TShirt from SHOPN.",
+    "image": "/images/angry-tshirt.png",
+    "price": 30.0
+  },
+  {
+    "id": "price_1L6OKNQqYS0o74zLbpkaCsfj",
+    "title": "HI TShirt",
+    "description": "HI TShirt from SHOPN.",
+    "image": "/images/hi-tshirt.png",
+    "price": 30.0
+  },
+  {
+    "id": "price_1L6OJmQqYS0o74zLKHwxL54k",
+    "title": "SHOPNs Stickers",
+    "description": "Limited edition SHOPN Stickers.",
     "image": "/images/sticker.png",
-    "price": 10.0
-  },
-  {
-    "id": "price_1L6JEOQqYS0o74zLKSlNtWkF",
-    "title": "Shopn Combo Pack",
-    "description": "Grab these limited edition Combo Pack.",
-    "image": "/images/combo.png",
-    "price": 25.0
+    "price": 20.0
   }
 ]
