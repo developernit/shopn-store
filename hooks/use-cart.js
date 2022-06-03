@@ -11,7 +11,6 @@ export const CartContext = createContext();
 export function useCartState() {
   const [cart, updateCart] = useState(defaultCart);
 
-  // cart is not consistent when we refresh page
   useEffect(() => {
     const stateFromStorage = window.localStorage.getItem("shopn_cart");
     const data = stateFromStorage && JSON.parse(stateFromStorage);
@@ -19,11 +18,6 @@ export function useCartState() {
       updateCart(data);
     }
   }, []);
-
-  useEffect(() => {
-    const data = JSON.stringify(cart);
-    window.localStorage.setItem("shopn_cart", data);
-  }, [cart]);
 
   const cartItems = Object.keys(cart.products).map((key) => {
     const product = products.find(({ id }) => `${id}` === `${key}`);
@@ -42,32 +36,49 @@ export function useCartState() {
   );
 
   // prettier-ignore
-  const totalItems = cartItems.reduce(
-    (accumulator, { quantity }) => {
-      return accumulator + quantity;
-    },
-    0
-  );
+  const totalItems =
+    cartItems.length > 0 &&
+    cartItems.reduce((prev, item) => {
+      console.log("type ", typeof item.quantity);
+      return prev.quantity + item.quantity
+    }, 0);
+
+  console.log("cart Items: ", cartItems);
 
   function addToCart({ id } = {}) {
-    updateCart((prev) => {
-      let cart = { ...prev };
-      if (cart.products[id]) {
-        cart.products[id].quantity = cart.products[id].quantity + 1;
-      } else {
-        cart.products[id] = {
-          id,
-          quantity: 1,
-        };
-      }
-      return cart;
-    });
+    let cartInfo = { ...cart };
+    if (cartInfo.products[id]) {
+      cartInfo.products[id].quantity = cartInfo.products[id].quantity + 1;
+    } else {
+      cartInfo.products[id] = {
+        id,
+        quantity: 1,
+      };
+    }
+    console.log("cartinfo ", cartInfo);
+    const data = JSON.stringify(cartInfo);
+    window.localStorage.setItem("shopn_cart", data);
+    return updateCart(cartInfo);
+    // updateCart((prev) => {
+    //   let cart = { ...prev };
+    //   console.log("carts ", cart);
+    //   if (cart.products[id]) {
+    //     console.log("check 1");
+    //     cart.products[id].quantity = cart.products[id].quantity + 1;
+    //   } else {
+    //     console.log("check 2");
+    //     cart.products[id] = {
+    //       id,
+    //       quantity: 1,
+    //     };
+    //   }
+    //   return cart;
+    // });
   }
 
   function updateItem({ id, quantity }) {
     updateCart((prev) => {
       let cart = { ...prev };
-
       if (cart.products[id]) {
         cart.products[id].quantity = quantity;
       }
@@ -85,6 +96,7 @@ export function useCartState() {
       }),
     });
   }
+  console.log("totalItems ", totalItems);
 
   return {
     cart,
