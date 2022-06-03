@@ -76,7 +76,15 @@ export function useCartState() {
     });
   }
 
-  return { cart, updateCart, subtotal, totalItems, addToCart, checkout };
+  return {
+    cart,
+    updateCart,
+    subtotal,
+    totalItems,
+    addToCart,
+    checkout,
+    cartItems,
+  };
 }
 
 export function useCart() {

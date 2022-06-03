@@ -24,24 +24,6 @@ export default function Home() {
           <em>Stripe</em>.
         </p>
 
-        <ul className={styles.cart}>
-          <li>
-            <strong>Items:</strong> {totalItems}
-          </li>
-          <li>
-            <strong>Total:</strong> ${subtotal}
-          </li>
-          <li>
-            <button
-              className={`${styles.button} ${styles.cartButton}`}
-              onClick={checkout}
-            >
-              <FaShoppingCart />
-              Check Out
-            </button>
-          </li>
-        </ul>
-
         <ul className={styles.grid}>
           {products.map((product) => {
             const { id, title, image, description, price } = product;
@@ -53,21 +35,21 @@ export default function Home() {
                     <h3>{title}</h3>
                     <p>$ {price}</p>
                     <p>{description}</p>
-
-                    <p>
-                      <button
-                        className={styles.button}
-                        onClick={() => {
-                          addToCart({
-                            id,
-                          });
-                        }}
-                      >
-                        Add To Cart
-                      </button>
-                    </p>
                   </a>
                 </Link>
+
+                <p>
+                  <button
+                    className={styles.button}
+                    onClick={() => {
+                      addToCart({
+                        id,
+                      });
+                    }}
+                  >
+                    Add To Cart
+                  </button>
+                </p>
               </li>
             );
           })}
