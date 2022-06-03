@@ -48,7 +48,6 @@ export default function Cart() {
           property="og:description"
           content="A simple ecom website, Shopn"
         />
-        <meta property="og:image" content={ogImage} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>

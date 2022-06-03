@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import products from "../products.json";
 import { useCart } from "../hooks/use-cart";
 import Link from "next/link";
-import ogImage from "../public/logo.png";
+import Image from "next/image";
 
 export default function Home() {
   const { subtotal, totalItems, addToCart, checkout } = useCart();
@@ -18,7 +18,10 @@ export default function Home() {
           property="og:description"
           content="A simple ecom website, Shopn"
         />
-        <meta property="og:image" content={ogImage} />
+        <meta
+          property="og:image"
+          content="https://github.com/developernit/shopn-store/blob/main/public/logo.png"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -26,7 +29,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a>Shopn!</a>
         </h1>
-        <img src="/logo.png" />
+        <Image src="/logo.png" height={200} width={200} />
         <p className={styles.description}>
           A simple e-commerce website built with <em>Next.js</em> and{" "}
           <em>Stripe</em>.
