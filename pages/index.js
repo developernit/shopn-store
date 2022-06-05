@@ -4,6 +4,7 @@ import products from "../products.json";
 import { useCart } from "../hooks/use-cart";
 import Link from "next/link";
 import Image from "next/image";
+import ImageOG from "../public/logo.png";
 
 export default function Home() {
   const { subtotal, totalItems, addToCart, checkout } = useCart();
@@ -14,13 +15,10 @@ export default function Home() {
         <meta property="description" content="Shopn" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Shopn" />
+        <meta property="og:image" content={ImageOG} />
         <meta
           property="og:description"
           content="A simple ecom website, Shopn"
-        />
-        <meta
-          property="og:image"
-          content="https://github.com/developernit/shopn-store/blob/main/public/logo.png"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
